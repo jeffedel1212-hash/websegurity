@@ -1,5 +1,3 @@
-
-
 // Configuración de EmailJS - REEMPLAZA CON TUS CREDENCIALES
 const EMAILJS_CONFIG = {
   serviceID: "service_nlpcwc2",
