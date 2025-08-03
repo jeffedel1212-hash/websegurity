@@ -1,0 +1,70 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.success-message {
+  color: #10b981;
+  background-color: #d1fae5;
+  border: 1px solid #a7f3d0;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.error-message {
+  color: #ef4444;
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.info-message {
+  color: #3b82f6;
+  background-color: #dbeafe;
+  border: 1px solid #93c5fd;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+/* Animaciones suaves */
+.transition-colors {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efectos hover mejorados */
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para inputs con focus mejorado */
+input:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+/* Loading spinner */
+.spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
