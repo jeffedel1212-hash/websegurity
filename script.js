@@ -3,9 +3,9 @@ const emailjs = require("emailjs-com")
 
 // Configuración de EmailJS - REEMPLAZA CON TUS CREDENCIALES
 const EMAILJS_CONFIG = {
-  serviceID: "tu_service_id",
-  templateID: "tu_template_id",
-  publicKey: "tu_public_key",
+  serviceID: "service_nlpcwc2",
+  templateID: "template_n8ctbok",
+  publicKey: "tr_OMw_WVbFr0rRkd",
 }
 
 // Inicializar EmailJS cuando se carga la página
