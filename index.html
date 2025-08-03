@@ -7,7 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .transition-all { transition: all 0.3s ease; }
+        .success-message { color: #10b981; background-color: #d1fae5; border: 1px solid #a7f3d0; padding: 12px; border-radius: 6px; }
+        .error-message { color: #ef4444; background-color: #fee2e2; border: 1px solid #fecaca; padding: 12px; border-radius: 6px; }
+    </style>
 </head>
 <body class="bg-gray-100">
     <div class="bg-white">
@@ -26,10 +31,9 @@
             </div>
             <div class="flex justify-between items-center py-4 border-t">
                 <div class="flex items-center space-x-2">
-                    <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"></path>
-                        <path d="M13 7h-2v6h2V7zm0 8h-2v2h2v-2z" fill="currentColor"></path>
-                    </svg>
+                    <div class="h-8 w-8 bg-blue-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">C</span>
+                    </div>
                     <span class="text-2xl font-semibold text-blue-800">CHASE</span>
                     <span class="text-2xl font-light text-gray-700">for BUSINESS℠</span>
                 </div>
@@ -45,29 +49,33 @@
         </header>
     </div>
     <main class="container mx-auto px-4 mt-8">
-        <div class="flex">
-            <div class="w-1/2 pr-8">
-                <h1 class="text-5xl font-light text-gray-800">Please log in:</h1>
-                <img alt="Woman smiling while working on a laptop" class="mt-8 rounded-lg" src="/placeholder.svg?height=400&width=600">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <div class="lg:w-1/2">
+                <h1 class="text-4xl lg:text-5xl font-light text-gray-800">Please log in:</h1>
+                <div class="mt-8 bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+                    <span class="text-gray-500">Business Image</span>
+                </div>
             </div>
-            <div class="w-1/2 pl-8">
+            <div class="lg:w-1/2">
                 <div class="bg-white p-8 rounded-lg shadow-md">
                     <form id="loginForm">
-                        <div>
-                            <label class="text-sm text-gray-600" for="username">Username:</label>
-                            <input class="w-full mt-1 p-2 border-b border-gray-300 focus:outline-none focus:border-blue-500" id="username" name="username" type="text" required>
+                        <div class="mb-4">
+                            <label class="block text-sm text-gray-600 mb-2" for="username">Username:</label>
+                            <input class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-all" id="username" name="username" type="text" required>
                         </div>
-                        <div class="mt-4">
-                            <label class="text-sm text-gray-600" for="password">Password:</label>
-                            <input class="w-full mt-1 p-2 border-b border-gray-300 focus:outline-none focus:border-blue-500" id="password" name="password" type="password" required>
+                        <div class="mb-4">
+                            <label class="block text-sm text-gray-600 mb-2" for="password">Password:</label>
+                            <input class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-all" id="password" name="password" type="password" required>
                         </div>
-                        <div class="mt-4">
-                            <input type="checkbox" id="remember" name="remember">
-                            <label class="text-sm text-gray-600" for="remember">Remember me</label>
+                        <div class="mb-6">
+                            <label class="flex items-center">
+                                <input type="checkbox" id="remember" name="remember" class="mr-2">
+                                <span class="text-sm text-gray-600">Remember me</span>
+                            </label>
                         </div>
-                        <button class="w-full bg-blue-600 text-white font-bold py-3 rounded-md mt-6 hover:bg-blue-700 transition-colors" type="submit">Login</button>
+                        <button class="w-full bg-blue-600 text-white font-bold py-3 rounded-md hover:bg-blue-700 transition-all" type="submit">Login</button>
                     </form>
-                    <div id="loginMessage" class="mt-4 text-center hidden"></div>
+                    <div id="loginMessage" class="mt-4 hidden"></div>
                 </div>
             </div>
         </div>
