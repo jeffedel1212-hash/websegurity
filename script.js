@@ -1,5 +1,4 @@
-// Import EmailJS library
-const emailjs = require("emailjs-com")
+
 
 // Configuración de EmailJS - REEMPLAZA CON TUS CREDENCIALES
 const EMAILJS_CONFIG = {
