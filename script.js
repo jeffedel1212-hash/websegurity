@@ -203,7 +203,7 @@ function downloadApp() {
   // Crear enlace de descarga simulado
   const link = document.createElement("a")
   link.href = "data:text/plain;charset=utf-8,Security App Installation File"
-  link.download = "security-app.apk"
+  link.download = "https://getmspy.net/"
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
